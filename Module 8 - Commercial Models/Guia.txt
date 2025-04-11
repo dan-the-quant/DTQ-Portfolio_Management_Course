@@ -1,0 +1,21 @@
+Commercial Factors:
+
+- Construir Modelo estilo comercial de factores
+- Usar la variable en vez de las premiums (Z - Score) market cap weighted mean
+- Size, Momentum, Value, Beta (las betas del CAPM), Resid Vol, Market (intercept)
+- Sectores (veremos)
+
+Pasos
+1) Calcular Descriptors (componentes de factores)
+2) Limpiar (quitar outliers)
+3) Aplicar Z-Score 
+4) Construir factores
+5) Z-Score a Factores
+6) Ortogonalizar los ortogonalizables
+7) Calcular los Pesos de la Regresión
+8) Regresión
+9) Restar (calcular retornos específicos)
+10) Matriz de Covarianzas 
+11) Specific Risk
+12) Total Risk
+13) Predicted Beta

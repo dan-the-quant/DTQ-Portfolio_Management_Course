@@ -1,0 +1,30 @@
+Dan the Quant - Quant Investor Course
+
+Module 7 - Carhart Four Factor Model 
+
+    * 7.1 Carhart: Proving Momentum 
+        Topics:
+        - Using Relative Strenght as Momentum Approach
+        - Calculating the Momentum Portfolios
+        - Calculating the WML Premium
+        - Comparing Momentum Portfolios Returns and Betas
+
+    * 7.2 BAB: Proving Beta as a Factor
+        Topics:
+        - Calculating the Beta against Beta Portfolios
+        - Calculating the AMD Premium
+        - Comparing Beta Portfolios Returns and Betas
+
+    * 7.3 Carhart: Carhart Model Specification
+        Topics:
+        - Calculating the Model for one stock
+        - Comparing the Betas and the Significance
+        - Calculating the Betas for all the stocks using a rolling approach
+        - Checking the Distribution of the Betas
+
+    * 7.4 Carhart: Fama and MacBeth Regression
+        Topics:
+        - Calculating the Daily Crossectional Regression
+        - Obtaining the Factor Returns
+        - Comparing Factor Returns with the Primes
+        - Testing for Significance of the Primes
