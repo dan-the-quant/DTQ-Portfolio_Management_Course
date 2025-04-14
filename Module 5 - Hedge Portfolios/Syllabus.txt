@@ -1,0 +1,34 @@
+Dan the Quant - Quant Investor Course
+
+Module 5 - Hedge Portfolios
+
+    * 5.1 HP: Introduction to Zero Beta Portfolio
+        Topics:
+        - Using a Five Stocks Approach
+        - Solving the Matrix Optimization Problem
+        - Obtaining the Weights and the Returns
+        - Portfolios Comparison and Metrics
+        - Calculating Portfolio's Beta
+
+    * 5.2 HP: Market-Neutral Portfolio (No Rebalancing)
+        Topics:
+        - Calculating the Zero Beta Portfolio using the whole universe
+        - Comparing Portfolio with the Market (Benchmark)
+        - Calculating the Rolling Beta of the Portfolio
+        - Significance of the Coefficients
+
+    * 5.3 HP: Market-Neutral Portfolio (Yearly [252-d] Rebalancing)
+        Topics:
+        - Calculating the Zero Beta Portfolio using the whole universe
+        - Comparing Portfolio with the Market (Benchmark)
+        - Calculating the Rolling Beta of the Portfolio
+        - Significance of the Coefficients
+
+    * 5.4 HP: Money-Neutral Portfolio
+        Topics:
+        - Understanding the constraint (sum of weights equal to zero)
+        - Short and Long strategies
+        - Calculating the Portfolio Weights
+        - Comparing Portfolio with the Market (Benchmark)
+        - Calculating the Rolling Beta of the Portfolio
+        - Significance of the Coefficients

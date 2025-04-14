@@ -1,0 +1,34 @@
+Dan the Quant - Quant Investor Course
+
+Module 2 - Linear Regression Models
+
+    * 2.1 OLS: Simple Linear Regression
+        Topics:
+        - Importing data from FRED API
+        - Plot data to find relations
+        - Scatter Plots and Boxplots
+        - Filtering Data to remove outliers
+        - Calculating Beta coefficients
+        - Significance of Beta Coefficients (t-Stat)
+        - R-Squared
+
+    * 2.2 OLS: Multiple Linear Regression
+        Topics:
+        - Matricial form of the Regression Model
+        - Calculate the Bias of the Coefficients
+        - Sum of Squares
+        - Joint Significante (F-Stat)
+        - Multicollinearity (VIF)
+
+    * 2.3 GLM: Constrained Linear Regression
+        Topics:
+        - Defining a constraints
+        - Calculating the Penalization of Betas
+        - Wald Test for constraints
+
+    * 2.4 WLS: Weighted Linear Regression
+        Topics:
+        - Understanding the Purpose of Weights
+        - Testing for Heteroskedasticity
+        - Applying an example (GLS)
+        - Calculating the Weighted R-Squared

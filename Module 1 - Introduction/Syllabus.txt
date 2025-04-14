@@ -1,0 +1,34 @@
+Dan the Quant - Quant Investor Course
+
+Module 1 - Introduction to Financial Theory.
+
+    * 1.1 Introduction: Prices vs Returns
+        Topics:
+        - Why we use returns rather than prices?
+        - Importing data from CSV
+        - Histogram and Distribution
+        - Normality Tests
+        - QQ Plot
+
+    * 1.2 Introduction: Benchmark
+        Topics:
+        - What is a benchmark
+        - Importing data from Yahoo Finance
+        - Histogram and Distribution
+        - Storing Data
+
+    * 1.3 Market Theory: Technical Indicators
+        Topics:
+        - Undertanding Moving Averages
+            + SMA, WMA, EMA, etc...
+        - Ploting Candle Sticks Charts
+        - Calculating Momentum Indicators
+        - Technical Analysis
+
+    * 1.4 Portfolios: Risk Measurement
+        Topics:
+        - Volatility and Variance
+        - Correlations and Covariance
+        - Tracking Error
+        - Value at Risk 95%
+        - Risk-Adjusted Returns
