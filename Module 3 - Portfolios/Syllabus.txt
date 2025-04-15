@@ -40,4 +40,4 @@ Module 3 - Portfolio Theory
         - Look Ahead Bias
         - Calculating Weights
         - Plotting Weights on Time
-        - Comparing Portfolios with and without rebalancing
+        - Comparing Portfolios depending on rebalancing frequency

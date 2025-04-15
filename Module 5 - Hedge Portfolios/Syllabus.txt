@@ -17,10 +17,10 @@ Module 5 - Hedge Portfolios
         - Calculating the Rolling Beta of the Portfolio
         - Significance of the Coefficients
 
-    * 5.3 HP: Market-Neutral Portfolio (Yearly [252-d] Rebalancing)
+    * 5.3 HP: Currency-Neutral Portfolio (Quarterly [63-d] Rebalancing)
         Topics:
-        - Calculating the Zero Beta Portfolio using the whole universe
-        - Comparing Portfolio with the Market (Benchmark)
+        - Calculating the Currency-Neutral Portfolio using the whole universe
+        - Comparing Portfolio with the DXY (Benchmark)
         - Calculating the Rolling Beta of the Portfolio
         - Significance of the Coefficients
 
