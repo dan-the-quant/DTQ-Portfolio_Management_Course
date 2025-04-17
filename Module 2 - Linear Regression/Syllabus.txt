@@ -6,7 +6,7 @@ Module 2 - Linear Regression Models
         Topics:
         - Importing data from FRED API
         - Plot data to find relations
-        - Scatter Plots and Boxplots
+        - Scatter Plots and Box plots
         - Filtering Data to remove outliers
         - Calculating Beta coefficients
         - Significance of Beta Coefficients (t-Stat)
@@ -14,10 +14,10 @@ Module 2 - Linear Regression Models
 
     * 2.2 OLS: Multiple Linear Regression
         Topics:
-        - Matricial form of the Regression Model
+        - Matrix form of the Regression Model
         - Calculate the Bias of the Coefficients
         - Sum of Squares
-        - Joint Significante (F-Stat)
+        - Joint Significance (F-Stat)
         - Multicollinearity (VIF)
 
     * 2.3 GLM: Constrained Linear Regression
@@ -32,3 +32,10 @@ Module 2 - Linear Regression Models
         - Testing for Heteroskedasticity
         - Applying an example (GLS)
         - Calculating the Weighted R-Squared
+
+    * 2.5 Diagnosis: Analysis of the Residuals
+        Topics:
+        - Heteroskedasticity
+        - Normality
+        - Autocorrelation
+        - Linearity
