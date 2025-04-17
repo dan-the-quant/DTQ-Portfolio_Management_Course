@@ -5,28 +5,13 @@ import numpy as np
 from fredapi import Fred
 
 
-# Create the Weights function
-def wexp(N, half_life):
-    c = np.log(0.5) / half_life
-    n = np.array(range(N))
-    w = np.exp(c * n)
-    return np.flip(w / np.sum(w))
-
-
-# Weighted Moving Averages
-def weighted_moving_average(data, window_size):
-    # Exponential Weights
-    weights = window_size * wexp(window_size, window_size / 2)
-
-    return data.rolling(window=window_size).apply(lambda x: np.dot(x, weights) / weights.sum(), raw=True)
-
-
 # Function to import data
 def import_financial_data(
         ticker: str,
         starting_year: str = '2015',
         adjusted_close: bool = True,
         volume: bool = True,
+        mkt_cap: bool = False,
 ):
     # Check the ticker for Upper Cases
     ticker = ticker if ticker.isupper() else ticker.upper()
@@ -61,6 +46,10 @@ def import_financial_data(
     if volume:
         columns.append('Volume')
         rename_dict["Volume"] = "volume"
+
+    if mkt_cap:
+        columns.append('Company Market Cap')
+        rename_dict["Company Market Cap"] = "mkt_cap"
 
     df_useful_data = df[columns]
     df_useful_data = df_useful_data.rename(columns=rename_dict)
