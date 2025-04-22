@@ -39,7 +39,7 @@ def rolling_portfolio_variance(
 
 
 # Helper: Preprocess inputs
-def _preprocess_inputs(
+def _preprocess_mkwz_inputs(
         expected_returns,
         cov_matrix
 ):
@@ -58,7 +58,7 @@ def eff_components(
         cov_matrix
 ):
     # Get Inputs
-    mu, _, Sigma_inv, iota = _preprocess_inputs(expected_returns, cov_matrix)
+    mu, _, Sigma_inv, iota = _preprocess_mkwz_inputs(expected_returns, cov_matrix)
 
     # Calculate components
     A = mu.T @ Sigma_inv @ mu
@@ -105,7 +105,7 @@ def markowitz_weights(
         desired_returns
 ):
     # Inputs
-    mu, _, Sigma_inv, iota = _preprocess_inputs(expected_returns, cov_matrix)
+    mu, _, Sigma_inv, iota = _preprocess_mkwz_inputs(expected_returns, cov_matrix)
 
     # Components
     A, B, C, D = eff_components(expected_returns, cov_matrix)
@@ -157,7 +157,7 @@ def cal_weights(
         desired_returns
 ):
     # Inputs
-    mu, _, Sigma_inv, _ = _preprocess_inputs(expected_returns, cov_matrix)
+    mu, _, Sigma_inv, _ = _preprocess_mkwz_inputs(expected_returns, cov_matrix)
 
     # Calculate the A component
     A = mu.T @ Sigma_inv @ mu
@@ -176,7 +176,7 @@ def cal_volatility(
         cov_matrix
 ):
     # Inputs
-    mu, _, Sigma_inv, _ = _preprocess_inputs(expected_returns, cov_matrix)
+    mu, _, Sigma_inv, _ = _preprocess_mkwz_inputs(expected_returns, cov_matrix)
 
     # Calculate the A component
     A = mu.T @ Sigma_inv @ mu
@@ -229,3 +229,84 @@ def calculate_analytics(
     })
 
     return summary_df
+
+
+# Helper: Preprocess inputs
+def _preprocess_zb_inputs(
+        expected_betas,
+        cov_matrix
+):
+    # Process Inputs
+    beta = expected_betas.values.flatten().reshape(-1, 1)
+    Sigma = cov_matrix.values
+    Sigma_inv = np.linalg.inv(Sigma)
+    iota = np.ones_like(beta)
+
+    return beta, Sigma, Sigma_inv, iota
+
+
+# Helper: Compute Zero Beta Portfolio components
+def zb_components(
+        expected_betas,
+        cov_matrix
+):
+    # Get Inputs
+    beta, _, Sigma_inv, iota = _preprocess_zb_inputs(expected_betas, cov_matrix)
+
+    # Calculate components
+    C = np.dot(np.dot(iota.T, Sigma_inv), iota)
+    D = np.dot(np.dot(beta.T, Sigma_inv), beta)
+    E = np.dot(np.dot(beta.T, Sigma_inv), iota)
+    Delta = (D * C - E * E)
+
+    return C, D, E, Delta
+
+
+# Function to get the Zero Beta Optimization Weights
+def zero_beta_weights(
+        expected_betas,
+        cov_matrix,
+):
+    # Inputs
+    beta, _, Sigma_inv, iota = _preprocess_zb_inputs(expected_betas, cov_matrix)
+
+    # Components
+    C, D, E, Delta = zb_components(expected_betas, cov_matrix)
+
+    # Calculate weights
+    beta_weights = ((D / Delta) * (Sigma_inv @ iota)) - ((E / Delta) * (Sigma_inv @ beta))
+
+    return beta_weights.flatten()
+
+
+def rolling_zero_beta_weights(
+        returns,
+        betas,
+        window=252,
+        rebalance_freq=63
+):
+    # Lists
+    weights_list = []
+    dates = []
+
+    for i in range(window, len(returns), rebalance_freq):
+        # Prepare Inputs
+        past_returns = returns.iloc[i - window:i]  # Rolling Window
+        past_betas = betas.iloc[i - window:i]
+        past_excepted_betas = past_betas.mean()
+        past_cov_matrix = past_returns.cov()
+
+        # Calculate Weights
+        w = zero_beta_weights(past_excepted_betas, past_cov_matrix)
+
+        # Save weights and dates
+        weights_list.append(w)
+        dates.append(returns.index[i])
+
+    # Create the DataFrame
+    weights_df = pd.DataFrame(weights_list, index=dates, columns=returns.columns)
+
+    # Expand the DataFrame
+    weights_df = weights_df.reindex(returns.index, method='ffill')
+
+    return weights_df.dropna()

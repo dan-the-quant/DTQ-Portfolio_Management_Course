@@ -2,6 +2,7 @@
 
 import pandas as pd
 import numpy as np
+import os
 from fredapi import Fred
 
 
@@ -70,3 +71,46 @@ def get_fred_data(
     df = fred.get_series(symbol)
 
     return df
+
+
+# Get the stock universe
+def import_stock_universe(
+        folder_path: str,
+        columns,
+        rename_vars,
+):
+    dataframes = {}
+
+    # List all files in the folder
+    for file in os.listdir(folder_path):
+        if file.endswith(".csv"):
+            # Full path to the file
+            file_path = os.path.join(folder_path, file)
+
+            # Read the Excel file
+            df = pd.read_csv(file_path)
+            df = df.set_index("Date")
+            df.index = pd.to_datetime(df.index)
+
+            df = df[columns]
+
+            df = df.rename(columns=dict(zip(columns, rename_vars)))
+
+            # Fill nans
+            df = df.interpolate(method='time')
+
+            df = df.loc['2015-01-01':]
+
+            df.dropna(inplace=True)
+
+            if len(df) >= 2000:
+                # File name without extension
+                file_name = os.path.splitext(file)[0]
+
+                # Store the Dictionary
+                dataframes[file_name] = df
+                print(f"File loaded: {file_name} ({len(df)} rows)")
+            else:
+                print(f"File skipped (less than 2000 rows after cleaning): {file}")
+
+    return dataframes
