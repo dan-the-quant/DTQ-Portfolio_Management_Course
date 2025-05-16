@@ -13,6 +13,87 @@ def wexp(N, half_life):
     return np.flip(w / np.sum(w))
 
 
+# Create a Function that Calculates the Market Cap Weighted Average
+def market_cap_weighted_average(
+        var_df: pd.DataFrame,
+        mkt_cap_df: pd.DataFrame,
+        mask: pd.DataFrame,
+) -> pd.Series:
+    # Exclude stocks filtering by mask
+    mkt_cap_adj = mkt_cap_df.fillna(0) * mask
+
+    # Calculate the Weighted Mean
+    numerator = (var_df * np.sqrt(mkt_cap_adj)).sum(axis=1)
+    denominator = np.sqrt(mkt_cap_adj).sum(axis=1)
+
+    return numerator / denominator
+
+
+# Create a Function that Calculates the Standard Deviation
+def standard_deviation(
+        var_df: pd.DataFrame,
+):
+    return var_df.std(axis=1, ddof=1)
+
+
+# Standardize Function
+def standardize_zscore(
+        var_df: pd.DataFrame,
+        mkt_cap_df: pd.DataFrame,
+        mask: pd.DataFrame,
+) -> pd.DataFrame:
+    # Calculate Market Cap Weighted Average
+    wa = market_cap_weighted_average(var_df, mkt_cap_df, mask)
+
+    # Calculate Cross-Sectional Standard Deviation
+    std = standard_deviation(var_df)
+
+    # Standardize (broadcasting Series across DataFrame rows)
+    zscore_df = (var_df.subtract(wa, axis=0)).divide(std, axis=0)
+
+    return zscore_df
+
+
+# Winsorize Function
+def custom_winsorize(df):
+    df_winz = df.copy()
+    data = df_winz.to_numpy()
+
+    # Masks for each condition
+    mask_gt_10 = data > 10
+    mask_lt_minus10 = data < -10
+    mask_5_to_10 = (data > 5) & (data <= 10)
+    mask_minus10_to_minus5 = (data >= -10) & (data < -5)
+
+    # Apply transformations
+    data[mask_5_to_10] = 5
+    data[mask_minus10_to_minus5] = -5
+    data[mask_gt_10 | mask_lt_minus10] = np.nan
+
+    # Return as DataFrame
+    return pd.DataFrame(data, index=df.index, columns=df.columns)
+
+
+# Standardization
+def iterative_standardize_winsorize(
+        var_df: pd.DataFrame,
+        mkt_cap_df: pd.DataFrame,
+        mask: pd.DataFrame,
+        iterations: int = 3
+) -> pd.DataFrame:
+    result = var_df.copy()
+
+    for i in range(iterations):
+        result = standardize_zscore(result, mkt_cap_df, mask)
+        result = custom_winsorize(result)
+
+    # Last standardization
+    result = standardize_zscore(result, mkt_cap_df, mask)
+
+    return result
+
+
+# Helper: Common Index
 def align_with_common_index(
         target: pd.Series,
         *others: Union[pd.Series, pd.DataFrame]
@@ -31,6 +112,7 @@ def align_with_common_index(
     return target_aligned, *aligned_others
 
 
+# Calculate the Factor Betas
 def estimate_factor_betas(
         stock_returns: pd.Series,
         factor_returns: pd.DataFrame,
@@ -62,6 +144,7 @@ def estimate_factor_betas(
     return params
 
 
+# Calculate the Rolling Factor Betas
 def rolling_factor_betas(
         stock_returns: pd.Series,
         factor_returns: pd.DataFrame,

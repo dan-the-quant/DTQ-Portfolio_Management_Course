@@ -78,6 +78,7 @@ def import_stock_universe(
         folder_path: str,
         columns,
         rename_vars,
+        start_year='2015'
 ):
     dataframes = {}
 
@@ -99,7 +100,7 @@ def import_stock_universe(
             # Fill nans
             df = df.interpolate(method='time')
 
-            df = df.loc['2015-01-01':]
+            df = df.loc[f'{start_year}-01-01':]
 
             df.dropna(inplace=True)
 

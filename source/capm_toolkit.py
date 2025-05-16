@@ -84,7 +84,7 @@ def compute_excess_returns(
         prices: pd.Series,
         risk_free_rate: pd.Series
 ):
-    returns = prices.pct_change(1)
+    returns = prices.pct_change(1, fill_method=None)
     risk_free_daily = compute_daily_returns(risk_free_rate)
     excess = returns - risk_free_daily
     return excess.dropna()
@@ -97,8 +97,9 @@ def capm_regression(
         window: int = 252,
         WLS: bool = False,
 ):
-    X = excess_benchmark
-    y = excess_stock
+    common_index = excess_benchmark.index.intersection(excess_stock.index)
+    X = excess_benchmark.loc[common_index]
+    y = excess_stock.loc[common_index]
 
     if WLS:
 
