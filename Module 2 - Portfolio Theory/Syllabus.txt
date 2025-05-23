@@ -1,8 +1,8 @@
 Dan the Quant - Quant Investor Course
 
-Module 3 - Portfolio Theory
+Module 2 - Portfolio Theory
 
-    * 3.1 PT: Correlation and Diversification
+    * 2.1 PT: Correlation and Diversification
         Topics:
         - Understanding the importance of diversification
         - Calculating an Equal Weighted Portfolio
@@ -12,7 +12,7 @@ Module 3 - Portfolio Theory
         - Residual Returns vs Normal Returns
         - Rolling Correlation vs Portfolio Variance
 
-    * 3.2 PT: Markowitz Efficient Frontier
+    * 2.2 PT: Markowitz Efficient Frontier
         Topics:
         - Plotting Random Portfolios
         - Matrix Optimization Problem
@@ -20,7 +20,7 @@ Module 3 - Portfolio Theory
         - Building the Efficient Frontier
         - Finding the Minimum Variance Portfolio (MVP)
 
-    * 3.3 PT: Capital Allocation Line
+    * 2.3 PT: Capital Allocation Line
         Topics:
         - Sharpe Ratio
         - Finding the Most Efficient Portfolio
@@ -28,14 +28,7 @@ Module 3 - Portfolio Theory
         - Borrowing vs Lending
         - Summarizing and Comparing Portfolios
 
-    * 3.4 PT: Black-Litterman Portfolios
-        Topics:
-        - Building a Market Capitalization Weighted Portfolio
-        - Expectations and Uncertainty
-        - Risk Aversion Coefficient and Benchmark
-        - Optimization and Weights Calculation
-
-    * 3.5 PT: Rebalancing Portfolios
+    * 2.4 PT: Rebalancing Portfolios
         Topics:
         - Look Ahead Bias
         - Calculating Weights

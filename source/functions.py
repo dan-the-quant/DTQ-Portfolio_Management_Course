@@ -3,59 +3,44 @@
 import pandas as pd
 import numpy as np
 import os
+import yfinance as yf
 from fredapi import Fred
 
 
-# Function to import data
-def import_financial_data(
-        ticker: str,
-        starting_year: str = '2015',
-        adjusted_close: bool = True,
-        volume: bool = True,
-        mkt_cap: bool = False,
+# Calculate Logarithmic Returns
+def log_returns(
+        price_series: pd.Series
 ):
-    # Check the ticker for Upper Cases
-    ticker = ticker if ticker.isupper() else ticker.upper()
+    return np.log(price_series / price_series.shift(1))
 
-    # Import data
-    df = pd.read_csv(rf"..\stocks\{ticker}.csv")
 
-    # Set the Index
-    date_col = 'Date' if 'Date' in df.columns else 'date' if 'date' in df.columns else None
-    if date_col:
-        df = df.set_index(date_col)
-        df.index = pd.to_datetime(df.index)
+# Function to import data
+def import_daily_financial_data(
+        ticker: str,
+        start_date: str = '2018-01-01',
+        end_date: str = '2025-01-01',
+        returns: bool = False,
+):
+    # Get the Data from Yahoo Finance
+    data = yf.download(
+        ticker,  # Stock to import
+        start=start_date,  # First Date
+        end=end_date,  # Last Date
+        interval='1d',  # Daily Basis
+        auto_adjust=True  # Adjusted Prices
+    )
 
-    columns = [
-        'Open Price',
-        'High Price',
-        'Low Price',
-        'Close Price',
-    ]
+    # Flat columns
+    data.columns = data.columns.get_level_values(0)
+    data.columns = data.columns.str.lower()
 
-    rename_dict = {
-        "Open Price": "open",
-        "High Price": "high",
-        "Low Price": "low",
-        "Close Price": "close",
-    }
+    if returns:
+        data['returns'] = log_returns(data['close'])
 
-    if adjusted_close:
-        columns.append('Adjusted_close')
-        rename_dict['Adjusted_close'] = 'adj_close'
+    # get rid of nans
+    data.dropna(inplace=True)
 
-    if volume:
-        columns.append('Volume')
-        rename_dict["Volume"] = "volume"
-
-    if mkt_cap:
-        columns.append('Company Market Cap')
-        rename_dict["Company Market Cap"] = "mkt_cap"
-
-    df_useful_data = df[columns]
-    df_useful_data = df_useful_data.rename(columns=rename_dict)
-
-    return df_useful_data.loc[f"{starting_year}-01-01":]
+    return data
 
 
 # Data Collection Function from FRED
@@ -63,55 +48,13 @@ def get_fred_data(
         symbol: str,
         fred_key: str,
 ) -> pd.DataFrame:
-
+    # Key to access the API
     key = fred_key
 
+    # Access
     fred = Fred(api_key=key)
 
+    # DataFrame
     df = fred.get_series(symbol)
 
     return df
-
-
-# Get the stock universe
-def import_stock_universe(
-        folder_path: str,
-        columns,
-        rename_vars,
-        start_year='2015'
-):
-    dataframes = {}
-
-    # List all files in the folder
-    for file in os.listdir(folder_path):
-        if file.endswith(".csv"):
-            # Full path to the file
-            file_path = os.path.join(folder_path, file)
-
-            # Read the Excel file
-            df = pd.read_csv(file_path)
-            df = df.set_index("Date")
-            df.index = pd.to_datetime(df.index)
-
-            df = df[columns]
-
-            df = df.rename(columns=dict(zip(columns, rename_vars)))
-
-            # Fill nans
-            df = df.interpolate(method='time')
-
-            df = df.loc[f'{start_year}-01-01':]
-
-            df.dropna(inplace=True)
-
-            if len(df) >= 2000:
-                # File name without extension
-                file_name = os.path.splitext(file)[0]
-
-                # Store the Dictionary
-                dataframes[file_name] = df
-                print(f"File loaded: {file_name} ({len(df)} rows)")
-            else:
-                print(f"File skipped (less than 2000 rows after cleaning): {file}")
-
-    return dataframes
