@@ -7,11 +7,13 @@ def portfolio_variance(
         weights,
         returns
 ):
+    # Weights
     weights = np.array(weights)
-    if isinstance(returns, pd.DataFrame):
-        returns = returns.values
 
-    cov_matrix = returns.cov()  # covariance matrix
+    # Calculate Covariance Matrix
+    cov_matrix = returns.cov()
+
+    # Portfolio Variance
     port_var = weights.T @ cov_matrix @ weights
 
     return port_var
@@ -64,7 +66,7 @@ def eff_components(
     A = mu.T @ Sigma_inv @ mu
     B = iota.T @ Sigma_inv @ mu
     C = iota.T @ Sigma_inv @ iota
-    D = A * C - B * B
+    D = (A * C) - (B * B)
     return A, B, C, D
 
 
