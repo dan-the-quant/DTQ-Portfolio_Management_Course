@@ -69,40 +69,29 @@ def rolling_calc_rstr(
     return pd.concat(rolling_results, axis=1)
 
 
-# Compute Daily Returns
-def compute_daily_returns(
-        annual_returns: pd.Series,
-        days: int = 360
+# Compute Daily Interest Rate
+def annual_to_daily_rate(
+        series,
+        days_per_year=252
 ):
-    daily_returns = (((1 + (annual_returns.div(100))) ** (1 / days)) - 1)
+    # From % to decimal
+    decimal_series = series / 100
 
-    return daily_returns
-
-
-# Compute the Excess Returns
-def compute_excess_returns(
-        prices: pd.Series,
-        risk_free_rate: pd.Series
-):
-    returns = prices.pct_change(1, fill_method=None)
-    risk_free_daily = compute_daily_returns(risk_free_rate)
-    excess = returns - risk_free_daily
-    return excess.dropna()
+    # Calculate the Rate
+    return (1 + decimal_series) ** (1 / days_per_year) - 1
 
 
 # Create the CAPM Function
 def capm_regression(
         excess_stock: pd.Series,
-        excess_benchmark: pd.Series | pd.DataFrame,
+        excess_benchmark: pd.Series,
         window: int = 252,
         WLS: bool = False,
 ):
-    common_index = excess_benchmark.index.intersection(excess_stock.index)
-    X = excess_benchmark.loc[common_index]
-    y = excess_stock.loc[common_index]
+    X = excess_benchmark
+    y = excess_stock
 
     if WLS:
-
         # Create weights with exponential decay
         weights = window * wexp(window, window / 2)
 
@@ -110,7 +99,6 @@ def capm_regression(
         model = sm.WLS(y, sm.add_constant(X), weights=weights, missing='drop').fit()
 
     else:
-
         # Fit OLS regression
         model = sm.OLS(y, sm.add_constant(X), missing='drop').fit()
 
@@ -118,21 +106,20 @@ def capm_regression(
 
 
 def rolling_capm_regression(
-        stock_prices: pd.Series,
-        benchmark_prices: pd.Series,
-        risk_free_rate: pd.Series,
+        stock_returns: pd.Series,
+        benchmark_returns: pd.Series,
+        daily_rfr: pd.Series,
         window: int = 252,
         WLS: bool = False,
 ):
-    # Align time series to the same date range
-    common_index = stock_prices.index.intersection(benchmark_prices.index).intersection(risk_free_rate.index)
-    stock_prices = stock_prices.loc[common_index]
-    benchmark_prices = benchmark_prices.loc[common_index]
-    risk_free_rate = risk_free_rate.loc[common_index]
+    # Align Data
+    df = pd.concat([stock_returns, benchmark_returns, daily_rfr], axis=1)
+    df = df.dropna()
+    df.columns = ['stock_returns', 'benchmark_returns', 'daily_returns']
 
     # Compute Excess Returns
-    excess_stock = compute_excess_returns(stock_prices, risk_free_rate)
-    excess_benchmark = compute_excess_returns(benchmark_prices, risk_free_rate)
+    excess_stock = df['stock_returns'] - df['daily_returns']
+    excess_benchmark = df['benchmark_returns'] - df['daily_returns']
 
     # Lists
     alphas, betas, sigma = [], [], []
