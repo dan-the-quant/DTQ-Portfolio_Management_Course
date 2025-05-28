@@ -1,0 +1,32 @@
+Dan the Quant - Quant Investor Course
+
+Module 5 - Fama and French Three Factor Model
+
+    * 5.1 F&F: Proving Size and Value
+        Topics:
+        - Creating the Size Portfolios
+        - Comparing Size Portfolios Returns and Betas
+        - Creating the Value Portfolios
+        - Comparing the Value Portfolios Returns and Betas
+        - Comparing Correlation among both premiums
+
+    * 5.2 F&F: Calculating the SMB and HML Premiums
+        Topics:
+        - Calculating the Fama and French six portfolios
+        - Calculating SMB Premium
+        - Calculating HML Premium
+        - Comparing Correlations
+
+    * 5.3 F&F: Fama and French Model Specification
+        Topics:
+        - Calculating the Model for one stock
+        - Comparing the Betas and the Significance
+        - Calculating the Betas for all the stocks
+        - Checking the Distribution of the Betas
+
+    * 5.4 F&F: Fama and MacBeth Regression
+        Topics:
+        - Calculating the Daily Crossectional Regression
+        - Obtaining the Factor Returns
+        - Comparing Factor Returns with the Primes
+        - Testing for Significance of the Primes

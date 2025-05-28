@@ -1,0 +1,28 @@
+Dan the Quant - Quant Investor Course
+
+Module 3 - Linear Regression Models
+
+    * 3.1 OLS: Simple Linear Regression
+        Topics:
+        - Importing data from FRED API
+        - Plot data to find relations
+        - Scatter Plots and Box plots
+        - Filtering Data to remove outliers
+        - Calculating Beta coefficients
+        - Significance of Beta Coefficients (t-Stat)
+        - R-Squared
+
+    * 3.2 OLS: Multiple Linear Regression
+        Topics:
+        - Matrix form of the Regression Model
+        - Calculate the Bias of the Coefficients
+        - Sum of Squares
+        - Joint Significance (F-Stat)
+        - Multicollinearity (VIF)
+
+    * 3.3 Diagnosis: Analysis of the Residuals
+        Topics:
+        - Heteroskedasticity
+        - Normality
+        - Autocorrelation
+        - Linearity

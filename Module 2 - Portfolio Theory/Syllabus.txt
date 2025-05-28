@@ -1,0 +1,36 @@
+Dan the Quant - Quant Investor Course
+
+Module 2 - Portfolio Theory
+
+    * 2.1 PT: Correlation and Diversification
+        Topics:
+        - Understanding the importance of diversification
+        - Calculating an Equal Weighted Portfolio
+        - Comparing Portfolio Risk vs Stocks Risk
+        - Efficiency Ratio of Stocks and Portfolio
+        - Understanding the concept of correlation
+        - Residual Returns vs Normal Returns
+        - Rolling Correlation vs Portfolio Variance
+
+    * 2.2 PT: Markowitz Efficient Frontier
+        Topics:
+        - Plotting Random Portfolios
+        - Matrix Optimization Problem
+        - Obtaining the Portfolio's Weights
+        - Building the Efficient Frontier
+        - Finding the Minimum Variance Portfolio (MVP)
+
+    * 2.3 PT: Capital Allocation Line
+        Topics:
+        - Sharpe Ratio
+        - Finding the Most Efficient Portfolio
+        - Building the Capital Allocation Line
+        - Borrowing vs Lending
+        - Summarizing and Comparing Portfolios
+
+    * 2.4 PT: Rebalancing Portfolios
+        Topics:
+        - Look Ahead Bias
+        - Calculating Weights
+        - Plotting Weights on Time
+        - Comparing Portfolios depending on rebalancing frequency

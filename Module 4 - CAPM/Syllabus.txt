@@ -1,0 +1,24 @@
+Dan the Quant - Quant Investor Course
+
+Module 4 - Capital Asset Pricing Model
+
+    * 4.1 CAPM: Naive CAPM
+        Topics:
+        - Risk Free Rate
+        - Rolling Variance and Rolling Covariance
+        - Rolling Beta and Rolling Alpha
+        - Security Market Line
+        - Treynor Ratio vs Sharpe Ratio
+
+    * 4.2 CAPM: Time-Weighted CAPM
+        Topics:
+        - Calculating Beta using WLS
+        - The weights function and how to apply it
+        - Weights: Ascending vs Descending
+
+    * 4.3 CAMP: Betas for the whole Universe
+        Topics:
+        - Importing the data for the whole universe
+        - Calculating Rolling Betas and Residual Returns
+        - Comparing Historical Beta vs Mean Beta (mean of rolling betas)
+        - Histogram and Distribution of Betas
