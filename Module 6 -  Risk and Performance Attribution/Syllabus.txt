@@ -1,19 +1,19 @@
 Dan the Quant - Quant Investor Course
 
-Module 9 - Risk and Performance Attribution
+Module 6 - Risk and Performance Attribution
 
-    * 9.1 TBD
+    * 6.1 TBD
         Topics:
         - NAN
 
-    * 9.2 TBD
+    * 6.2 TBD
         Topics:
         - NAN
 
-    * 9.3 TBD
+    * 6.3 TBD
         Topics:
         - NAN
 
-    * 9.4 TBD
+    * 6.4 TBD
         Topics:
         - NAN
