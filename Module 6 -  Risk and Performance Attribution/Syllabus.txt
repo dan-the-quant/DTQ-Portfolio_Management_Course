@@ -2,18 +2,20 @@ Dan the Quant - Quant Investor Course
 
 Module 6 - Risk and Performance Attribution
 
-    * 6.1 TBD
+    * 6.1 Brinson-Fachler Model
         Topics:
-        - NAN
+        - Understanding the Brinson-Fachler Model
+        - Using a Hypothetical Benchmark
+        - Using a Real Sector ETF as Benchmark
 
-    * 6.2 TBD
+    * 6.2 Factor Performance Attribution
         Topics:
-        - NAN
+        - Calculating Factor Returns
+        - Calculating Residual Returns
+        - Plotting the Results
 
-    * 6.3 TBD
+    * 6.3 Risk Attribution
         Topics:
-        - NAN
-
-    * 6.4 TBD
-        Topics:
-        - NAN
+        - Understanding the Menchero Methodology
+        - Calculating an Example
+        - Plotting the Results
