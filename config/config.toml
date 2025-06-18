@@ -1,0 +1,14 @@
+[settings]
+
+# Choose the data provider
+# Options: "yahoo_finance", "fmp", "bloomberg", "kaxanuk_dc
+provider = "yahoo_finance"
+
+
+[api_keys]
+# Only required if the selected provider needs an API key
+fmp = "your_fmp_api_key_here"
+bloomberg = "your_bloomberg_token_if_applicable"
+
+# For the FRED Data, we need an API key
+fred = '28a2f98efd0d54f81450478a9b3a2e32'
