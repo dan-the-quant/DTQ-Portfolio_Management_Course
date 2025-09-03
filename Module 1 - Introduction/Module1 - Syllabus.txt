@@ -1,6 +1,13 @@
 Dan the Quant - Quant Investor Course
 
 Module 1 - Introduction to Financial Theory
+"Successful Investing is about managing risk, not avoiding it." - Benjamin Graham
+
+Learning goal:
+    Interpret, understand and learn to apply the most important metrics of performance and risk measurement
+to real portfolios, investment strategies and individual stocks.
+
+Only with a good understanding of these metrics it's possible to analyze comparable investments.
 
     * 1.0 Why a hedge fund practitioner believes that the basic theory is the cornerstone of Investing Science?
         Topics:

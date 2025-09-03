@@ -1,5 +1,20 @@
 Dan the Quant - Quant Investor Course
 
+“Without data, you’re just another person with an opinion.” - William Edwards Deming
+
+Linear regression is just finding the best-fitting line through your data points.
+
+Once that line has been properly identified we can use it to explain past observations and to predict future observations
+within its limitations, of course.
+
+Learning goals:
+- Estimate a simple line that fits the data
+- Estimate multi-dimensional linear shape that fits the data
+- Analyze the results and assess how much we can trust in the result
+- Apply it to financial instruments to have a measure of sensitivity to the change in other variables
+
+
+
 Module 3 - Linear Regression Models
 
     * 3.1 OLS: Simple Linear Regression

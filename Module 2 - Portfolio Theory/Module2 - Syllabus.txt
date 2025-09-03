@@ -1,5 +1,17 @@
 Dan the Quant - Quant Investor Course
 
+"Don't put all your eggs on one basket"
+
+Learning goals:
+    - Understand that the concept of risk must include a way to measure the co-movement of prices
+    - Find out why diversification can be the best thing in Investment Management (the only free lunch)
+    - Consider Markowitz proposition to see the portfolio construction problem as trade off between profits and risk
+    - Master the concept of leverage to build optimal portfolios according to investors risk tolerance
+    - Investigate some implementation details about portfolios (what happens outside of the classroom)
+
+The classical, Nobel Prized way of constructing portfolios is not the only way, but the more you use it and think about it
+the more you value its practicallity. Moreover, it makes for a really hard-to-beat benchmark when trying to find better methods.
+
 Module 2 - Portfolio Theory
 
     * 2.1 PT: Correlation and Diversification
