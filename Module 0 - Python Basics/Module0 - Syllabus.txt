@@ -1,0 +1,31 @@
+Dan the Quant - Quant Investor Course
+
+Module 1 - Python Basics
+
+    * 0.1 Basics: Lists, Dictionaries and DataFraes
+        Topics:
+        - Lists
+        - Dictionaries
+        - DataFrames
+        - DataFrames Methods and Attributes
+
+    * 0.2 Basics: Statistics
+        Topics:
+        - Drop Missing Values
+        - Fill Missing Values
+        - Central Tendency
+        - Dispersion
+        - Correlation
+        - Applications
+
+    * 0.3 Basics: Loops and Functions
+        Topics:
+        - Conditionals
+        - Logical Operators
+        - For-Loops
+        - While-Loops
+        - Loop Controls
+        - Define Functions
+        - Error Handling
+        - Collatz Conjecture
+        - Plot Series
