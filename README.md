@@ -10,6 +10,8 @@ This repository contains all materials for the **DTQ Portfolio Construction Work
 
 ---
 
+Unlock the secrets of Wall Street's top portfolio managers and transform your investment approach from intuitive guesswork to a disciplined, scientific method. This book bridges the gap between academic theory and practical application, revealing why risk management, diversification, and a rigorous scientific approach are the indispensable cornerstones of successful equity portfolio management. From understanding fundamental concepts like return and risk to navigating the complexities of behavioral biases and leveraging advanced tools like factor models, you'll embark on a journey that begins with the basics and culminates in a sophisticated understanding of how to maximize profits and reduce uncertainty with confidence. Discover how the financial industry has evolved to embrace data-driven decision-making, offering a compelling path for anyone seeking to master the markets and create lasting value.
+
 ## 📚 Course Modules
 
 ### **Module 1: Introduction to Financial Data and Risk**
