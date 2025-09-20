@@ -122,3 +122,55 @@ tickers = ["XLK", "XLV", "XLF", "XLY", "XLE", "XLI", "XLRE"]
 [module."6.3".yahoo_finance]
 
 tickers = ['AAPL', 'AMZN', 'GOOG', 'META', 'MSFT', 'NVDA', 'TSLA']
+
+###############################
+## Module 7 - Visualizations ##
+###############################
+
+### Notebook 7.1 MatPlotLib ###
+
+[module."7.1".yahoo_finance]
+
+tickers = ["AMZN", "F", "WMT"]
+
+### Notebook 7.2 Seaborn ###
+
+[module."7.2a".yahoo_finance]
+
+tickers = ["META", "MSFT", "TSLA"]
+
+[module."7.2b".yahoo_finance]
+
+tickers = [
+    "XLC",  # Communication Services
+    "XLY",  # Consumer Discretionary
+    "XLP",  # Consumer Staples
+    "XLE",  # Energy
+    "XLF",  # Financials
+    "XLV",  # Health Care
+    "XLI",  # Industrials
+    "XLB",  # Materials
+    "XLRE", # Real Estate
+    "XLK",  # Technology
+    "XLU"   # Utilities
+]
+
+[module."7.3".yahoo_finance]
+
+tickers = [
+    # Technology
+    "AAPL",  # Apple
+    "MSFT",  # Microsoft
+    # Financials
+    "JPM",   # JPMorgan Chase
+    "GS",    # Goldman Sachs
+    # Healthcare
+    "JNJ",   # Johnson & Johnson
+    "PFE",   # Pfizer
+    # Energy
+    "XOM",   # ExxonMobil
+    "CVX",   # Chevron
+    # Consumer Discretionary
+    "AMZN",  # Amazon
+    "TSLA"   # Tesla
+]

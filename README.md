@@ -45,7 +45,12 @@ This repository contains all materials for the **DTQ Portfolio Construction Work
 ### **Module 6: Performance and Risk Attribution**
 - 6.1 Brinson-Fachler Model  
 - 6.2 Performance Attribution for Factor Models   
-- 6.3 Menchero Risk Attribution  
+- 6.3 Menchero Risk Attribution
+
+### **Module 7: Visualization and Analytics**
+- 7.1 MatPlotLib 
+- 7.2 Seaborn 
+- 7.3 Plotly
 
 ---
 
@@ -53,7 +58,7 @@ This repository contains all materials for the **DTQ Portfolio Construction Work
 
 - Python  
 - Jupyter Notebooks  
-- Pandas, NumPy, Matplotlib, StatsModels
+- Pandas, NumPy, Matplotlib, StatsModels, Seaborn, Plotly
 
 ---
 

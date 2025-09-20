@@ -1,0 +1,29 @@
+Dan the Quant - Quant Investor Course
+
+Module 7 - Visualizations
+
+    * 7.1.- MatPlotLib for Risk and Returns
+        Topics:
+        - Line Plots (Time Series)
+        - Bar Plots
+        - Scatter Plots
+        - Subplots
+
+    * 7.2.- Seaborn and Factor Models
+        Topics:
+        - Distributions (Histogram and Densities)
+        - Alternative Distributions (Box Plots and Violin Plots)
+        - Regression Lines
+        - Pair Plots
+        - Heatmaps
+        - Colors and Styles
+
+    * 7.3.- Plotly and Attribution
+        Topics:
+        - Waterfall Charts
+        - Sunburst Charts
+        - Heatmaps
+        - Stacked Areas Plots
+        - Radar Charts
+        - Candlesticks
+        - Introduction to Animation
