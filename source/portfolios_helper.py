@@ -24,10 +24,10 @@ def calculate_analytics(
     sharpe_ratio = (annualized_return - risk_free_rate) / annualized_std
 
     # Max Drawdown
-    cumulative_returns = returns_dataframe.cumsum().apply(np.exp)
-    rolling_max = cumulative_returns.cummax()
-    drawdown = (cumulative_returns / rolling_max) - 1
-    max_drawdown = drawdown.min()
+    cumulative_returns = np.exp(returns_dataframe.div(100).cumsum())            # cumulative returns from log returns
+    rolling_max = cumulative_returns.rolling(ann_factor, min_periods=1).max()   # rolling maximum
+    drawdown = cumulative_returns / rolling_max - 1                             # drawdown
+    max_drawdown = drawdown.min() * 100                                         # maximum drawdown
 
     # VaR at 95%
     var_95 = returns_dataframe.quantile(0.05)
