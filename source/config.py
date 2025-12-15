@@ -5,7 +5,7 @@ VALID_PROVIDERS = ["yahoo_finance", "fmp", "bloomberg", "kaxanuk_dc"]
 
 # Get Data Provider from .TOML
 def get_data_provider(
-        config_path=r"..\config\config.toml"
+        config_path=r"../config/config.toml"
 ) -> str:
 
     with open(config_path, "rb") as f:
@@ -24,7 +24,7 @@ def get_data_provider(
 
 # Get the API Key from .TOML
 def get_api_key(
-        config_path=r"..\config\config.toml",
+        config_path=r"../config/config.toml",
         provider='fred',
 ) -> str:
 
@@ -39,7 +39,7 @@ def get_api_key(
 # Get the tickers for each Notebook
 def get_tickers(
         mod: str,
-        toml_path=r"..\config\tickers.toml"
+        toml_path=r"../config/tickers.toml"
 ) -> list:
 
     # Set Provider

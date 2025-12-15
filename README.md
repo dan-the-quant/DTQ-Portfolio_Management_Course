@@ -61,7 +61,12 @@ From understanding fundamental concepts like return and risk to navigating the c
 ### **Module 6: Performance and Risk Attribution**
 - 6.1 Brinson-Fachler Model  
 - 6.2 Performance Attribution for Factor Models   
-- 6.3 Menchero Risk Attribution  
+- 6.3 Menchero Risk Attribution
+
+### **Module 7: Visualization and Analytics**
+- 7.1 MatPlotLib 
+- 7.2 Seaborn 
+- 7.3 Plotly
 
 ---
 
@@ -69,7 +74,7 @@ From understanding fundamental concepts like return and risk to navigating the c
 
 - Python  
 - Jupyter Notebooks  
-- Pandas, NumPy, Matplotlib, StatsModels
+- Pandas, NumPy, Matplotlib, StatsModels, Seaborn, Plotly
 
 ---
 
