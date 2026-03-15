@@ -1,3 +1,35 @@
+
+<div align="right">
+  <details>
+    <summary >🌐 Language</summary>
+    <div>
+      <div align="center">
+        <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=en">English</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=zh-CN">简体中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=zh-TW">繁體中文</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=ja">日本語</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=ko">한국어</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=hi">हिन्दी</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=th">ไทย</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=fr">Français</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=de">Deutsch</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=es">Español</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=it">Italiano</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=ru">Русский</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=pt">Português</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=nl">Nederlands</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=pl">Polski</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=ar">العربية</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=fa">فارسی</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=tr">Türkçe</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=vi">Tiếng Việt</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=id">Bahasa Indonesia</a>
+        | <a href="https://openaitx.github.io/view.html?user=dan-the-quant&project=DTQ-Portfolio_Management_Course&lang=as">অসমীয়া</
+      </div>
+    </div>
+  </details>
+</div>
+
 # DTQ Portfolio Construction Workshop: A practitioner's review of the basics
 
 **Portfolio Construction Workshop by Daniel Barrera and Edgar Alcántara**
